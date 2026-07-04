@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // ---- 言語・モジュール ----
+    "target": "es2025",
+    "lib": ["es2025"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+
+    // ---- 実行モデル ----
+    // tsc は型検査（noEmit）のみを担う。実行は package.json のツールチェーンが担い、
+    // ローカル開発では .ts のままホストし、本番はビルド成果物を実行する。
+    // 相対 import は拡張子 .ts を明示する。
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+
+    // ---- 型安全性（アーキテクチャルール 1.1）----
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    "skipLibCheck": true
+  },
+  "include": ["src", "eslint-rules", "eslint.config.ts", "vitest.config.ts"],
+  // eslint-rules/fixtures は Lint 基盤のテスト用フィクスチャで、意図的な違反
+  // コードを含むため本体の型検査から除外する(fixtures 内の tsconfig が担当)。
+  "exclude": ["eslint-rules/fixtures"]
+}

@@ -1,0 +1,16 @@
+{
+  // eslint.config.ts の設定テスト(eslint-config.test.ts)用フィクスチャプロジェクト。
+  // 型情報を使うルールの検証のため、projectService がこの tsconfig を解決する。
+  // 意図的な違反コードを含むため、リポジトリ本体の typecheck からは除外されている。
+  "compilerOptions": {
+    "target": "es2025",
+    "lib": ["es2025"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noEmit": true
+  },
+  "include": ["src"]
+}

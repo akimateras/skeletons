@@ -1,0 +1,15 @@
+{
+  // RuleTester(型情報あり)用の最小プロジェクト。テスト対象コード(file.ts)は
+  // allowDefaultProject の仮想ファイルとして解決されるため、ここには含めない
+  // (含めると project service と二重に解決されてエラーになる)。
+  "compilerOptions": {
+    "target": "es2025",
+    "lib": ["es2025"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true
+  },
+  "files": []
+}
